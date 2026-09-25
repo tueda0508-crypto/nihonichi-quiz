@@ -13,7 +13,7 @@ const csp: Plugin = {
       "default-src 'self'",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data:",
-      "font-src 'self'",
+      "font-src 'self' data:",
       "connect-src 'self'",
       "base-uri 'none'",
       "form-action 'none'",
