@@ -36,8 +36,9 @@ describe('planGame', () => {
   })
 
   it('ジャンル指定では、そのジャンルの問題だけ・問題数を超えない', () => {
-    const plan = planGame('food', 10, [], seededRng(5))
-    expect(plan.length).toBe(QUESTIONS.filter((q) => q.genre === 'food').length)
+    const foodCount = QUESTIONS.filter((q) => q.genre === 'food').length
+    const plan = planGame('food', foodCount + 5, [], seededRng(5))
+    expect(plan.length).toBe(foodCount)
     for (const p of plan) expect(getQuestion(p.questionId).genre).toBe('food')
   })
 
